@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jak volit v Brně, když jste občan jiné země EU — Zelení Brno</title>
+<meta name="description" content="Návod krok za krokem pro občany jiných zemí EU žijící v Brně: jak si zařídit doklad o pobytu a zapsat se do seznamu voličů pro komunální volby 2026.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Volby v Brně 2026">
+<meta property="og:url" content="https://volbyvbrne.cz/">
+<meta property="og:title" content="Jak volit v Brně, když jste občan jiné země EU">
+<meta property="og:description" content="Návod krok za krokem: jak si zařídit doklad o pobytu a zapsat se do seznamu voličů pro komunální volby v Brně 2026.">
+<meta property="og:image" content="https://volbyvbrne.cz/assets/logo-zeleni-brno.png">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jak volit v Brně, když jste občan jiné země EU">
+<meta name="twitter:description" content="Návod krok za krokem: jak si zařídit doklad o pobytu a zapsat se do seznamu voličů pro komunální volby v Brně 2026.">
+
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  [id] { scroll-margin-top: 76px; }
+  body { font-family: 'UrbanGrotesk', sans-serif; background: #fff; color: #111; }
+  a { color: inherit; }
+  ul, ol { list-style: none; }
+
+  .skip-link {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    background: #000; color: #fff; padding: 12px 18px; font-weight: 700; text-decoration: none;
+  }
+  .skip-link:focus { left: 12px; top: 12px; }
+
+  /* ── Top bar ─────────────────────────────────────────────── */
+  .topbar { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid #e6e6e6; }
+  .topbar-inner {
+    max-width: 1240px; margin: 0 auto; padding: 0 24px; height: 60px;
+    display: flex; align-items: center; gap: 20px;
+  }
+  .topbar-logo img { height: 26px; display: block; flex-shrink: 0; }
+  .topbar-deadline {
+    display: flex; align-items: center; gap: 7px;
+    background: #000; color: #fff; padding: 6px 13px; border-radius: 20px;
+    font-size: 12.5px; font-weight: 700; white-space: nowrap;
+  }
+  .topbar-deadline .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-green); flex-shrink: 0; }
+  .topbar-nav { display: flex; gap: 4px; margin-left: auto; }
+  .topbar-nav a {
+    text-decoration: none; color: #444; font-size: 13.5px; font-weight: 700;
+    padding: 8px 12px; border-radius: 6px; transition: background 0.15s, color 0.15s;
+  }
+  .topbar-nav a:hover { background: #f4f4f2; color: #000; }
+  .topbar-nav a.active { background: #eefaf3; color: #067a40; }
+  .topbar-cta {
+    background: var(--color-green); color: #000; padding: 9px 16px; border-radius: 6px;
+    font-weight: 700; font-size: 13px; text-decoration: none; white-space: nowrap; flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .topbar-cta:hover { background: #09b060; }
+
+  /* ── Intro ───────────────────────────────────────────────── */
+  .intro { padding: 44px 24px 40px; }
+  .intro-inner { max-width: 760px; margin: 0 auto; }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #067a40; margin-bottom: 12px; }
+  .intro h1 {
+    font-family: 'TuskerGrotesk', sans-serif; text-transform: uppercase; letter-spacing: 0.01em;
+    font-size: clamp(27px, 4vw, 40px); line-height: 1.12; color: #000; margin-bottom: 16px;
+  }
+  .intro-lede { font-size: 17px; line-height: 1.6; color: #444; font-weight: 400; margin-bottom: 26px; max-width: 620px; }
+
+  .fact-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+  .fact { background: #f4f4f2; border-radius: 8px; padding: 12px 16px; display: flex; flex-direction: column; gap: 3px; }
+  .fact-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #777; }
+  .fact-value { font-size: 14.5px; font-weight: 700; color: #000; }
+  .fact-critical { background: #000; }
+  .fact-critical .fact-label { color: rgba(255,255,255,0.55); }
+  .fact-critical .fact-value { color: #fff; }
+
+  .path-picker { border: 1.5px solid #e6e6e6; border-radius: 10px; padding: 20px; margin-bottom: 20px; }
+  .path-picker-title { font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+  .path-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .path-option {
+    display: block; border: 1.5px solid #ddeee2; border-radius: 8px; padding: 14px 16px;
+    text-decoration: none; color: #000; transition: border-color 0.15s, background 0.15s;
+  }
+  .path-option:hover { border-color: var(--color-green); background: #f5fff9; }
+  .path-option strong { display: block; font-size: 14px; margin-bottom: 4px; }
+  .path-option span { display: block; font-size: 13px; color: #666; line-height: 1.45; }
+
+  /* ── Callouts (3 tiers by severity) ─────────────────────── */
+  .callout { border-radius: 8px; padding: 15px 18px; margin: 16px 0; font-size: 14.5px; line-height: 1.6; display: flex; gap: 11px; }
+  .callout svg { flex-shrink: 0; margin-top: 2px; }
+  .callout-info { background: #eefaf3; border: 1px solid #bfe9d1; color: #0a3d24; }
+  .callout-info svg { color: #067a40; }
+  .callout-note { background: #f7f7f5; border: 1px solid #e2e2de; color: #333; }
+  .callout-note svg { color: #666; }
+  .callout-critical { background: #000; color: #fff; }
+  .callout-critical svg { color: var(--color-green); }
+  .callout-critical a { color: #fff; text-decoration: underline; }
+  .callout strong { font-weight: 700; }
+  .callout a { text-decoration: underline; font-weight: 600; }
+
+  /* ── Guide layout (sidebar + content) ───────────────────── */
+  .guide-layout { max-width: 1240px; margin: 0 auto; padding: 8px 24px 72px; display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: start; }
+  .guide-sidebar { position: sticky; top: 76px; display: flex; flex-direction: column; gap: 2px; padding-top: 4px; }
+  .guide-sidebar a {
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    padding: 9px 12px; border-radius: 6px; text-decoration: none; color: #444;
+    font-size: 13.5px; font-weight: 600; transition: background 0.15s, color 0.15s;
+  }
+  .guide-sidebar a:hover { background: #f7f7f5; color: #000; }
+  .guide-sidebar a.active { background: #eefaf3; color: #067a40; }
+  .guide-sidebar .badge { font-size: 11px; font-weight: 700; color: #999; }
+  .guide-sidebar a.active .badge { color: #067a40; }
+  .guide-sidebar .sidebar-divider { height: 1px; background: #ececec; margin: 10px 4px; }
+
+  .guide-main { display: flex; flex-direction: column; gap: 52px; min-width: 0; }
+
+  .mobile-toc { display: none; }
+
+  /* ── Steps ───────────────────────────────────────────────── */
+  .step h2, .plain-section h2 {
+    font-family: 'TuskerGrotesk', sans-serif; text-transform: uppercase; letter-spacing: 0.01em;
+    font-size: clamp(22px, 2.6vw, 29px); line-height: 1.15; color: #000; margin: 4px 0 10px;
+  }
+  .step-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #067a40; }
+  .step-intro { font-size: 16px; line-height: 1.6; color: #333; margin-bottom: 10px; max-width: 680px; }
+  .step-progress { font-size: 13px; color: #888; margin-bottom: 22px; }
+  .step-progress strong { color: #067a40; font-weight: 700; }
+
+  .mini-head {
+    font-family: 'UrbanGrotesk', sans-serif; font-size: 12.5px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase; color: #666;
+    margin: 26px 0 10px;
+  }
+  .step > .mini-head:first-of-type { margin-top: 0; }
+
+  .prose { font-size: 15.5px; line-height: 1.65; color: #333; max-width: 700px; }
+  .prose + .prose { margin-top: 10px; }
+  .prose strong { color: #000; font-weight: 700; }
+  .prose a { color: #067a40; font-weight: 600; text-decoration: underline; }
+  .fact-inline { font-size: 15px; color: #333; }
+  .fact-inline strong { color: #000; }
+
+  /* Quick facts */
+  .quick-facts { display: flex; flex-direction: column; gap: 12px; background: #fafaf8; border: 1px solid #ececec; border-radius: 10px; padding: 18px 20px; margin: 4px 0 16px; }
+  .qf-row { display: grid; grid-template-columns: 150px 1fr; gap: 16px; }
+  .qf-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: #888; }
+  .qf-value { font-size: 15px; color: #222; line-height: 1.5; }
+  .qf-value a { color: #067a40; font-weight: 600; text-decoration: underline; }
+  @media (max-width: 600px) {
+    .qf-row { grid-template-columns: 1fr; gap: 2px; }
+  }
+
+  /* Numbered process list */
+  .proc-list { display: flex; flex-direction: column; gap: 11px; margin: 4px 0 16px; counter-reset: proc; }
+  .proc-list li { counter-increment: proc; display: flex; gap: 13px; font-size: 15px; line-height: 1.55; color: #333; max-width: 680px; }
+  .proc-list li::before {
+    content: counter(proc); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+    background: #000; color: #fff; font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; margin-top: 1px;
+  }
+  .proc-list a { color: #067a40; font-weight: 600; text-decoration: underline; }
+
+  /* Functional checklist */
+  .checklist { display: flex; flex-direction: column; margin: 4px 0 16px; border-top: 1px solid #f0f0f0; }
+  .checklist li { border-bottom: 1px solid #f0f0f0; }
+  .checklist label { display: flex; gap: 12px; align-items: flex-start; padding: 11px 4px; cursor: pointer; }
+  .checklist input[type="checkbox"] { width: 19px; height: 19px; margin-top: 2px; flex-shrink: 0; accent-color: var(--color-green); cursor: pointer; }
+  .checklist span { font-size: 15px; line-height: 1.55; color: #222; }
+  .checklist input:checked ~ span { color: #999; text-decoration: line-through; }
+  .checklist span a { color: #067a40; font-weight: 600; text-decoration: underline; }
+  .checklist.static li { display: flex; gap: 12px; align-items: flex-start; padding: 9px 4px; }
+  .checklist.static li::before { content: '—'; color: #aaa; flex-shrink: 0; }
+  .checklist.static span { font-size: 15px; line-height: 1.55; color: #222; }
+
+  /* Progressive disclosure */
+  .disclosure { border: 1px solid #ececec; border-radius: 10px; margin-top: 22px; overflow: hidden; }
+  .disclosure summary {
+    cursor: pointer; list-style: none; padding: 15px 20px; font-weight: 700; font-size: 14.5px;
+    display: flex; justify-content: space-between; align-items: center; gap: 12px; color: #000;
+  }
+  .disclosure summary::-webkit-details-marker { display: none; }
+  .disclosure summary::after { content: 'Zobrazit ↓'; font-weight: 600; font-size: 13px; color: #067a40; flex-shrink: 0; }
+  .disclosure[open] summary::after { content: 'Skrýt ↑'; }
+  .disclosure[open] summary { border-bottom: 1px solid #ececec; }
+  .disclosure-body { padding: 18px 20px 22px; }
+  .disclosure-body .prose, .disclosure-body .proc-list, .disclosure-body .checklist, .disclosure-body .callout { margin-left: 0; }
+
+  /* ── Reminder form (inline, not hero) ───────────────────── */
+  .reminder-section { background: #f4fff8; border-radius: 14px; padding: 36px 32px; }
+  .reminder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; margin-top: 22px; }
+  .reminder-form { background: #fff; padding: 26px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); display: flex; flex-direction: column; gap: 14px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-field { display: flex; flex-direction: column; gap: 5px; }
+  .form-field label { font-size: 12px; font-weight: 700; color: #444; letter-spacing: 0.03em; text-transform: uppercase; }
+  .form-field input, .form-field select {
+    padding: 11px 13px; border: 2px solid #ddeee2; border-radius: 4px;
+    font-size: 15px; font-family: 'UrbanGrotesk', sans-serif;
+    transition: border-color 0.2s; outline: none; color: #000; background: #fff;
+  }
+  .form-field input:focus, .form-field select:focus { border-color: var(--color-green); }
+  .form-consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #555; }
+  .form-consent input { margin-top: 3px; flex-shrink: 0; accent-color: var(--color-green); }
+  .form-consent a { color: #067a40; text-decoration: underline; }
+  .form-submit {
+    background: #000; color: #fff; border: none; padding: 14px 30px; border-radius: 4px;
+    font-size: 15px; font-weight: 700; cursor: pointer; font-family: 'UrbanGrotesk', sans-serif;
+    transition: background 0.2s; margin-top: 2px;
+  }
+  .form-submit:hover { background: #222; }
+  .form-submit:disabled { opacity: 0.6; cursor: default; }
+  .form-success { background: #fff; padding: 24px; border-radius: 10px; text-align: center; }
+  .form-success h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .form-success p { color: #555; font-size: 14.5px; }
+  .reminder-note { font-size: 14px; line-height: 1.6; color: #35544a; }
+  .reminder-note ul { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+  .reminder-note li { padding-left: 16px; position: relative; }
+  .reminder-note li::before { content: '·'; position: absolute; left: 0; color: #067a40; font-weight: 700; }
+
+  /* ── Links list ─────────────────────────────────────────── */
+  .links-list { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+  .links-list a { color: #067a40; font-weight: 700; text-decoration: underline; font-size: 15px; }
+  .links-list a:hover { color: var(--color-green); }
+
+  /* ── FAQ ─────────────────────────────────────────────────── */
+  .faq-list { border-top: 1px solid #ececec; margin-top: 6px; }
+  .faq-item { border-bottom: 1px solid #ececec; }
+  .faq-item summary {
+    cursor: pointer; list-style: none; font-weight: 700; font-size: 15.5px; padding: 16px 4px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; font-size: 22px; font-weight: 400; color: var(--color-green); flex-shrink: 0; transition: transform 0.2s; }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p { padding: 0 4px 16px; font-size: 15px; line-height: 1.6; color: #444; }
+
+  /* ── Footer ─────────────────────────────────────────────── */
+  footer { background: #000; color: #fff; padding: 36px 24px; }
+  .footer-inner { max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-logo img { height: 26px; filter: brightness(0) invert(1); }
+  .footer-meta { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.6; text-align: right; }
+  .footer-meta a { color: var(--color-green); text-decoration: none; }
+  .footer-meta a:hover { color: #fff; }
+
+  /* ── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .guide-layout { grid-template-columns: 1fr; padding-top: 0; }
+    .guide-sidebar { display: none; }
+    .mobile-toc {
+      display: flex; gap: 8px; overflow-x: auto; padding: 14px 24px;
+      margin: 0 -24px 4px; border-bottom: 1px solid #ececec;
+    }
+    .mobile-toc a {
+      flex-shrink: 0; padding: 8px 14px; border: 1px solid #ddd; border-radius: 20px;
+      font-size: 13px; font-weight: 700; text-decoration: none; color: #333; white-space: nowrap;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .mobile-toc a.active { background: #000; color: #fff; border-color: #000; }
+    .topbar-nav { display: none; }
+    .reminder-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .topbar-inner { padding: 0 16px; gap: 12px; }
+    .topbar-deadline span:not(.dot) { display: none; }
+    .topbar-deadline { padding: 8px; }
+    .intro { padding: 32px 16px 28px; }
+    .guide-layout { padding: 0 16px 56px; }
+    .reminder-section { padding: 26px 18px; }
+    .path-options { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 28px 16px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .footer-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#hlavni-obsah" class="skip-link">Přeskočit na obsah</a>
+
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <a href="#top" class="topbar-logo"><img src="assets/logo-zeleni-brno.png" alt="Zelení Brno 2026"></a>
+    <span class="topbar-deadline"><span class="dot"></span><span>Uzávěrka zápisu: <strong>7. 10. 16:00</strong></span></span>
+    <nav class="topbar-nav" aria-label="Kroky návodu">
+      <a href="#krok-1">1. Doklad</a>
+      <a href="#krok-2">2. Zápis voličů</a>
+      <a href="#krok-3">3. Volby</a>
+      <a href="#faq">Dotazy</a>
+    </nav>
+    <a href="#pripomenuti" class="topbar-cta">Připomenutí</a>
+  </div>
+</header>
+
+<main id="hlavni-obsah">
+
+<section class="intro" id="top">
+  <div class="intro-inner">
+    <p class="eyebrow">Komunální volby v Brně · 9.–10. října 2026</p>
+    <h1>Jak volit v Brně, když jste občan jiné země EU</h1>
+    <p class="intro-lede">Co musíte zařídit a do kdy — návod krok za krokem, který připravila Strana zelených v Brně.</p>
+
+    <div class="fact-row">
+      <div class="fact">
+        <span class="fact-label">Volby</span>
+        <span class="fact-value">Pá 9. 10. 14:00–22:00 · So 10. 10. 8:00–14:00</span>
+      </div>
+      <div class="fact fact-critical">
+        <span class="fact-label">Uzávěrka zápisu do seznamu voličů</span>
+        <span class="fact-value">7. 10. 2026, 16:00</span>
+      </div>
+    </div>
+
+    <div class="path-picker">
+      <p class="path-picker-title">Kde začít?</p>
+      <div class="path-options">
+        <a href="#krok-1" class="path-option">
+          <strong>Nemám doklad o pobytu ani trvalý pobyt</strong>
+          <span>Začněte krokem 1 — vyřízení může trvat 6–8 týdnů, nenechávejte to na poslední chvíli.</span>
+        </a>
+        <a href="#krok-2" class="path-option">
+          <strong>Mám trvalý pobyt nebo starší osvědčení o registraci</strong>
+          <span>Máte, co potřebujete — přeskočte rovnou na krok 2.</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="callout callout-info">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      <div>Zápis do brněnského seznamu voličů pro komunální volby nijak neovlivní vaše volební právo ve vaší domovské zemi – obě práva existují nezávisle na sobě.</div>
+    </div>
+  </div>
+</section>
+
+<div class="guide-layout">
+  <nav class="guide-sidebar" aria-label="Obsah návodu">
+    <a href="#krok-1">1. Doklad o pobytu <span class="badge" data-badge-for="krok-1"></span></a>
+    <a href="#krok-2">2. Zápis voličů <span class="badge" data-badge-for="krok-2"></span></a>
+    <a href="#krok-3">3. Jděte volit <span class="badge" data-badge-for="krok-3"></span></a>
+    <div class="sidebar-divider"></div>
+    <a href="#pripomenuti">Připomenutí e-mailem</a>
+    <a href="#odkazy">Další odkazy</a>
+    <a href="#faq">Časté dotazy</a>
+  </nav>
+
+  <div class="guide-main">
+    <nav class="mobile-toc" aria-label="Obsah návodu">
+      <a href="#krok-1">1. Doklad</a>
+      <a href="#krok-2">2. Zápis voličů</a>
+      <a href="#krok-3">3. Volby</a>
+      <a href="#pripomenuti">Připomenutí</a>
+      <a href="#odkazy">Odkazy</a>
+      <a href="#faq">Dotazy</a>
+    </nav>
+
+    <section class="step" id="krok-1">
+      <p class="step-eyebrow">Krok 1 ze 3</p>
+      <h2>Získejte doklad o pobytu</h2>
+      <p class="step-intro"><strong>Co budete žádat:</strong> osvědčení o registraci občana EU (dřív „potvrzení o přechodném pobytu"). Platí 10 let, vydání je zpoplatněné jen jednorázovým poplatkem.</p>
+      <p class="step-progress"><span class="step-progress-count">0/7</span> splněno v checklistu níže</p>
+
+      <h3 class="mini-head">Kde si vyřídit doklad</h3>
+      <div class="quick-facts">
+        <div class="qf-row"><span class="qf-label">Pracoviště</span><span class="qf-value">OAMP MV ČR – pracoviště Brno (odbor azylové a migrační politiky)</span></div>
+        <div class="qf-row"><span class="qf-label">Adresa</span><span class="qf-value">Tuřanka 1554/115b, 627 00 Brno-Slatina — <a href="https://maps.app.goo.gl/gGjLfR3FLrwVMbzs8" target="_blank" rel="noopener">otevřít mapu</a></span></div>
+        <div class="qf-row"><span class="qf-label">Telefon</span><span class="qf-value"><a href="tel:+420974801801">+420 974 801 801</a> (Po–Čt 8:00–16:00, Pá 8:00–12:00)</span></div>
+        <div class="qf-row"><span class="qf-label">Cena</span><span class="qf-value">200 Kč — výhradně platební kartou na místě</span></div>
+      </div>
+
+      <h3 class="mini-head">Jak se objednat</h3>
+      <ol class="proc-list">
+        <li>Jděte na <a href="https://ipc.gov.cz/cs/new-reservation" target="_blank" rel="noopener">frs.gov.cz</a> – objednávkový systém Ministerstva vnitra</li>
+        <li>Zaregistrujte si účet (potvrzovací e-mail dorazí z adresy noreply@frs.gov.cz)</li>
+        <li>Po přihlášení klikněte na „Rezervace termínu" a vyberte účel návštěvy, datum a čas</li>
+        <li>Termín zkontrolujete nebo změníte v sekci „Moje rezervace"</li>
+      </ol>
+      <div class="callout callout-info">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <div><strong>Objednání předem není povinné</strong> — bez rezervace vás obslouží v pořadí, v jakém dorazíte. Rezervace ale ušetří čekání, termíny bývají obsazené i několik týdnů dopředu. Objednat se lze i telefonicky.</div>
+      </div>
+
+      <h3 class="mini-head">Co si připravit na osobní návštěvu</h3>
+      <ul class="checklist">
+        <li><label><input type="checkbox" data-check-id="k1-1"><span>Platný pas nebo občanský průkaz vaší země – vezmete si ho zpět</span></label></li>
+        <li><label><input type="checkbox" data-check-id="k1-2"><span>1× fotografie 35×45 mm – zajistěte si předem, fotoautomat na místě běžně není</span></label></li>
+        <li><label><input type="checkbox" data-check-id="k1-3"><span>Doklad o ubytování – nájemní smlouva, souhlas majitele s ověřeným podpisem, nebo výpis z katastru</span></label></li>
+        <li><label><input type="checkbox" data-check-id="k1-4"><span>Doklad o účelu pobytu – pracovní smlouva, potvrzení od zaměstnavatele nebo o studiu (jen při zaměstnání, podnikání nebo studiu)</span></label></li>
+        <li><label><input type="checkbox" data-check-id="k1-5"><span>Doklad o zdravotním pojištění – EHIC/GHIC, cestovní pojištění, nebo formulář S1/S2/S3 (nevyžaduje se při zaměstnání či podnikání)</span></label></li>
+        <li><label><input type="checkbox" data-check-id="k1-6"><span>Platební karta – poplatek 200 Kč se hradí kartou na místě</span></label></li>
+        <li><label><input type="checkbox" data-check-id="k1-7"><span>Formulář žádosti – vyplníte i na místě, nebo si ho <a href="https://ipc.gov.cz/wp-content/uploads/2025/01/Tiskopis-zadosti-o-osvedceni-o-registraci-%C2%A787a_vyplnovaci-12122024_ZAM.pdf" target="_blank" rel="noopener">stáhněte předem (PDF)</a></span></label></li>
+      </ul>
+      <div class="callout callout-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Pozor:</strong> listiny musí být v češtině nebo slovenštině. Cizojazyčné dokumenty (např. anglická pracovní smlouva) vyžadují úřední kopii.</div>
+      </div>
+
+      <h3 class="mini-head">Jak dlouho to celkově trvá</h3>
+      <div class="quick-facts">
+        <div class="qf-row"><span class="qf-label">Termín na OAMP</span><span class="qf-value">Podle vytíženosti pracoviště — klidně i několik týdnů dopředu</span></div>
+        <div class="qf-row"><span class="qf-label">Rozhodnutí o žádosti</span><span class="qf-value">Obvykle do 30 dnů, ve složitějších případech až 60 dnů</span></div>
+        <div class="qf-row"><span class="qf-label">Vyzvednutí</span><span class="qf-value">Osobně na OAMP, do 30 dnů od vyřízení</span></div>
+      </div>
+
+      <details class="disclosure">
+        <summary><span>Nemůžete přijít osobně? Podání poštou</span></summary>
+        <div class="disclosure-body">
+          <p class="prose">Žádost lze poslat doporučeným dopisem na adresu OAMP Brno (Tuřanka 1554/115b, 627 00 Brno). U poštovního podání se poplatek platí předem bankovním převodem.</p>
+          <ol class="proc-list">
+            <li>Na <a href="https://ipc.gov.cz/spravni-poplatky/generator-platebnich-udaju/" target="_blank" rel="noopener">portálu pro cizince vygenerujte platební údaje</a> (číslo účtu Ministerstva vnitra a váš variabilní symbol)</li>
+            <li>Poplatek 200 Kč uhraďte bankovním převodem ještě před odesláním žádosti</li>
+            <li>K žádosti přiložte doklad o zaplacení včetně variabilního symbolu</li>
+          </ol>
+          <p class="prose">Co přiložit a v jaké podobě:</p>
+          <ul class="checklist static">
+            <li><span>Vyplněný a vlastnoručně podepsaný <a href="https://ipc.gov.cz/wp-content/uploads/2025/01/Tiskopis-zadosti-o-osvedceni-o-registraci-%C2%A787a_vyplnovaci-12122024_ZAM.pdf" target="_blank" rel="noopener">formulář (PDF)</a> žádosti (originál)</span></li>
+            <li><span><strong>Prostá kopie</strong> pasu nebo občanského průkazu – originál předložíte až při vyzvednutí hotového osvědčení</span></li>
+            <li><span>Fotografie 35×45 mm</span></li>
+            <li><span><strong>Úředně ověřená kopie</strong> nájemní smlouvy / dokladu o ubytování</span></li>
+            <li><span><strong>Úředně ověřená kopie</strong> pracovní smlouvy / potvrzení o studiu</span></li>
+            <li><span>Doklad o zaplacení správního poplatku (s variabilním symbolem)</span></li>
+          </ul>
+          <div class="callout callout-critical">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <div><strong>Poštovní podání nedoporučujeme, pokud vám záleží na čase.</strong> Chybí-li v zásilce cokoliv nebo pošlete-li špatný typ kopie, úřad žádost neřeší, dokud podklady nedoplníte – a o chybě se dozvíte se zpožděním. Při osobní návštěvě vám úředník všechno zkontroluje hned na místě.</div>
+          </div>
+          <p class="prose">Žádost lze podat i elektronicky – přes datovou schránku nebo e-mailem s uznávaným elektronickým podpisem. Podrobný postup najdete na <a href="https://ipc.gov.cz/spravni-rizeni/podani-na-pracovisti-ministerstva-vnitra-poslat-postou-datovou-schrankou-emailem-se-zarucenym-elektronickym-podpisem/" target="_blank" rel="noopener">ipc.gov.cz</a>.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="step" id="krok-2">
+      <p class="step-eyebrow">Krok 2 ze 3</p>
+      <h2>Nechte se zapsat do seznamu voličů</h2>
+      <p class="step-intro">Jakmile budete mít v ruce osvědčení o registraci (nebo trvalý pobyt), jděte na úřad <strong>té brněnské městské části, kde bydlíte</strong>, a požádejte o zápis do dodatku stálého seznamu voličů.</p>
+      <p class="step-progress"><span class="step-progress-count">0/3</span> splněno v checklistu níže</p>
+
+      <h3 class="mini-head">Kde</h3>
+      <p class="prose">Úřad vaší městské části podle adresy trvalého/přechodného bydliště. Kompletní seznam všech brněnských městských částí s adresami, telefony a odkazy na jejich webové stránky najdete na <a href="https://www.brno.cz/mestske-casti-prehled" target="_blank" rel="noopener">brno.cz/mestske-casti-prehled</a>. Zde se také telefonicky nebo e-mailem informujte, které pracoviště přesně zápis do seznamu voličů provádí a jakou má pracovní dobu.</p>
+
+      <h3 class="mini-head">Co s sebou</h3>
+      <ul class="checklist">
+        <li><label><input type="checkbox" data-check-id="k2-1"><span>Pas nebo občanský průkaz vaší země</span></label></li>
+        <li><label><input type="checkbox" data-check-id="k2-2"><span>Osvědčení o registraci (z kroku 1)</span></label></li>
+        <li><label><input type="checkbox" data-check-id="k2-3"><span>Písemná žádost – jméno a příjmení, datum narození, státní občanství, adresa pobytu a věta, že žádáte o zápis do dodatku stálého seznamu voličů</span></label></li>
+      </ul>
+
+      <h3 class="mini-head">Jak žádost podat</h3>
+      <ol class="proc-list">
+        <li><strong>Osobně na úřadu MČ</strong> – nejjistější a nejrychlejší varianta, úředník zkontroluje vše na místě</li>
+        <li><strong>Doporučenou poštou</strong> na adresu úřadu MČ</li>
+        <li><strong>Elektronicky</strong> – přes datovou schránku, nebo e-mailem s uznávaným elektronickým podpisem</li>
+      </ol>
+      <p class="fact-inline"><strong>Cena:</strong> Zdarma</p>
+
+      <div class="callout callout-critical">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div><strong>Nejzazší termín: 7. října 2026 do 16:00.</strong> Po tomto termínu vás úřad do seznamu nezapíše a volit nebudete moci.</div>
+      </div>
+      <div class="callout callout-info">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <div>Zápis je trvalý. Při příštích komunálních volbách za 4 roky nemusíte žádat znovu – pokud se ovšem nepřestěhujete mimo svou městskou část v Brně.</div>
+      </div>
+    </section>
+
+    <section class="step" id="krok-3">
+      <p class="step-eyebrow">Krok 3 ze 3</p>
+      <h2>Jděte volit</h2>
+      <p class="step-progress"><span class="step-progress-count">0/2</span> splněno v checklistu níže</p>
+
+      <h3 class="mini-head">Kdy a kde</h3>
+      <div class="quick-facts">
+        <div class="qf-row"><span class="qf-label">Pátek 9. 10. 2026</span><span class="qf-value">14:00–22:00</span></div>
+        <div class="qf-row"><span class="qf-label">Sobota 10. 10. 2026</span><span class="qf-value">8:00–14:00</span></div>
+        <div class="qf-row"><span class="qf-label">Volební místnost</span><span class="qf-value">Najdete podle adresy bydliště na <a href="https://volby.tmapy.cz/" target="_blank" rel="noopener">volby.tmapy.cz</a></span></div>
+      </div>
+
+      <h3 class="mini-head">Co s sebou</h3>
+      <ul class="checklist">
+        <li><label><input type="checkbox" data-check-id="k3-1"><span>Pas nebo občanský průkaz</span></label></li>
+        <li><label><input type="checkbox" data-check-id="k3-2"><span>Osvědčení o registraci (doklad o pobytu)</span></label></li>
+      </ul>
+
+      <h3 class="mini-head">Co se volí</h3>
+      <p class="prose">Na místě obdržíte dva volební lístky – pro zastupitelstvo města Brna a pro zastupitelstvo vaší městské části. Na obou můžete označit až tolik jmen, kolik se volí členů zastupitelstva (Brno 55, městské části méně), nebo dát všechny hlasy jedné straně, případně volbu kombinovat: dát hlas straně a vybrat hlasy několika jednotlivým kandidátům z jiných stran.</p>
+      <p class="prose">Starosta (primátor) se nevolí přímo, ale je zvolen z řad zastupitelů – tradičně bývá kandidátem na starostu osoba číslo 1 na kandidátce dané strany.</p>
+
+      <div class="callout callout-critical">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div><strong>Korespondenční volba ani volba na voličský průkaz u komunálních voleb neexistuje.</strong> Musíte přijít fyzicky do volební místnosti v Brně – jinak volit nelze.</div>
+      </div>
+    </section>
+
+    <section class="reminder-section" id="pripomenuti">
+      <h2 style="font-family:'TuskerGrotesk',sans-serif; text-transform:uppercase; font-size:clamp(22px,2.6vw,29px); margin-bottom:8px;">Chcete připomenutí před volbami?</h2>
+      <p class="step-intro">Zadejte e-mail, jméno a příjmení a vyberte svou městskou část – týden před volbami vám napíšeme, kde najdete svou volební místnost, a připomeneme vám blížící se termíny.</p>
+
+      <div class="reminder-grid">
+        <div>
+          <form class="reminder-form" id="reminderForm">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="remName">Jméno a příjmení</label>
+                <input id="remName" name="name" required placeholder="Jana Nováková">
+              </div>
+              <div class="form-field">
+                <label for="remEmail">E-mail</label>
+                <input id="remEmail" name="email" type="email" required placeholder="jana@email.cz">
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="remDistrict">Městská část (nepovinné)</label>
+              <select id="remDistrict" name="district">
+                <option value="">Nevybráno</option>
+                <option>Brno-Bohunice</option>
+                <option>Brno-Bosonohy</option>
+                <option>Brno-Bystrc</option>
+                <option>Brno-Černovice</option>
+                <option>Brno-Chrlice</option>
+                <option>Brno-Ivanovice</option>
+                <option>Brno-Jehnice</option>
+                <option>Brno-jih</option>
+                <option>Brno-Jundrov</option>
+                <option>Brno-Kníničky</option>
+                <option>Brno-Kohoutovice</option>
+                <option>Brno-Komín</option>
+                <option>Brno-Královo Pole</option>
+                <option>Brno-Líšeň</option>
+                <option>Brno-Maloměřice a Obřany</option>
+                <option>Brno-Medlánky</option>
+                <option>Brno-Nový Lískovec</option>
+                <option>Brno-Ořešín</option>
+                <option>Brno-Řečkovice a Mokrá Hora</option>
+                <option>Brno-sever</option>
+                <option>Brno-Slatina</option>
+                <option>Brno-Starý Lískovec</option>
+                <option>Brno-střed</option>
+                <option>Brno-Tuřany</option>
+                <option>Brno-Utěchov</option>
+                <option>Brno-východ</option>
+                <option>Brno-Vinohrady</option>
+                <option>Brno-Žabovřesky</option>
+                <option>Brno-Žebětín</option>
+                <option>Brno-Židenice</option>
+              </select>
+            </div>
+            <label class="form-consent">
+              <input type="checkbox" id="remConsent" name="consent" required>
+              <span>Souhlasím se zpracováním osobních údajů Stranou zelených za účelem zaslání informace o volbách.</span>
+            </label>
+            <button type="submit" class="form-submit">Přihlásit se k odběru →</button>
+          </form>
+          <div class="form-success" id="reminderSuccess" style="display:none">
+            <h3>Díky, jste přihlášeni!</h3>
+            <p>Týden před volbami vám napíšeme se všemi důležitými informacemi.</p>
+          </div>
+        </div>
+        <div class="reminder-note">
+          <p>Připomenutí se hodí, i když už máte doklad o pobytu vyřízený a v seznamu voličů zapsáni – ušetří vám hledání volební místnosti na poslední chvíli.</p>
+          <ul>
+            <li>Žádný spam — píšeme jen v souvislosti s těmito volbami.</li>
+            <li>Vaše údaje zpracovává Strana zelených, IČ 00409740.</li>
+            <li>Odběr můžete kdykoli zrušit odkazem v e-mailu.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="plain-section" id="odkazy">
+      <h2>Další užitečné odkazy</h2>
+      <ul class="links-list">
+        <li><a href="https://ipc.gov.cz/typy-viz-a-pobytu/obcane-evropske-unie/osvedceni-o-registraci/" target="_blank" rel="noopener">Osvědčení o registraci – kompletní informace (ipc.gov.cz)</a></li>
+        <li><a href="https://ipc.gov.cz/spravni-poplatky/generator-platebnich-udaju/" target="_blank" rel="noopener">Generátor platebních údajů (platba převodem u poštovního/datovkového podání)</a></li>
+        <li><a href="https://www.brno.cz/mestske-casti-prehled" target="_blank" rel="noopener">Adresy všech úřadů městských částí Brna</a></li>
+        <li><a href="https://www.mvcr.cz/clanek/volby" target="_blank" rel="noopener">Ministerstvo vnitra – volby</a></li>
+        <li><a href="https://www.brno.cz" target="_blank" rel="noopener">Magistrát města Brna</a></li>
+        <li><a href="https://volby.tmapy.cz/" target="_blank" rel="noopener">Vyhledání volební místnosti podle adresy</a></li>
+      </ul>
+    </section>
+
+    <section class="plain-section" id="faq">
+      <h2>Nejčastější dotazy</h2>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>Musím mít doklad o pobytu, i když v Brně reálně bydlím a mám nájemní smlouvu?</summary>
+          <p>Ano. Fakticky bydlet nestačí – zákon vyžaduje úřední doklad o pobytu (osvědčení o registraci).</p>
+        </details>
+        <details class="faq-item">
+          <summary>Musím se na OAMP předem objednat?</summary>
+          <p>Ne, objednání je jen doporučené. Bez rezervace vás obslouží v pořadí, v jakém dorazíte – rezervace vám ale ušetří čekání.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Co když zmeškám termín 7. října?</summary>
+          <p>Bohužel volit nebudete moci. Zápis nelze po uzávěrce dodatečně doplnit.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Ovlivní zápis do brněnského seznamu voličů mé volební právo doma na Slovensku (nebo v jiné zemi EU)?</summary>
+          <p>Ne, obě práva jsou na sobě nezávislá.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Musím žádat o zápis znovu při příštích volbách?</summary>
+          <p>Ne, zápis je trvalý, pokud se nepřestěhujete nebo nezmění vaše podmínky pobytu.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Můžu volit na voličský průkaz, když budu v den voleb jinde?</summary>
+          <p>Ne. U komunálních voleb voličský průkaz neexistuje – musíte volit ve volební místnosti podle místa bydliště.</p>
+        </details>
+      </div>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <a href="#top" class="footer-logo"><img src="assets/logo-zeleni-brno.png" alt="Zelení Brno 2026"></a>
+    <div class="footer-meta">
+      Návod připravila Strana zelených v Brně pro komunální volby 2026.<br>
+      Otázky? Napište na <a href="mailto:brno@zeleni.cz">brno@zeleni.cz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Checklist: real checkboxes, persisted per-item so the guide works as an actual to-do list.
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.checklist input[type="checkbox"]'));
+
+  function updateProgress() {
+    document.querySelectorAll('.step').forEach(function (step) {
+      var stepBoxes = step.querySelectorAll('.checklist input[type="checkbox"]');
+      if (!stepBoxes.length) return;
+      var checked = Array.prototype.filter.call(stepBoxes, function (b) { return b.checked; }).length;
+      var countEl = step.querySelector('.step-progress-count');
+      if (countEl) countEl.textContent = checked + '/' + stepBoxes.length;
+      var badge = document.querySelector('.badge[data-badge-for="' + step.id + '"]');
+      if (badge) badge.textContent = checked + '/' + stepBoxes.length;
+    });
+  }
+
+  boxes.forEach(function (box) {
+    var key = 'volbyvbrne-check-' + box.dataset.checkId;
+    try {
+      box.checked = localStorage.getItem(key) === '1';
+    } catch (e) { /* localStorage unavailable — checkboxes still work, just don't persist */ }
+    box.addEventListener('change', function () {
+      try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch (e) {}
+      updateProgress();
+    });
+  });
+  updateProgress();
+
+  // Scrollspy: highlight the current section in the sidebar / mobile TOC / top nav.
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.guide-sidebar a, .mobile-toc a, .topbar-nav a'));
+  var spySections = Array.prototype.slice.call(document.querySelectorAll('.step, #pripomenuti, #odkazy, #faq'));
+  if ('IntersectionObserver' in window && spySections.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function (a) {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-90px 0px -65% 0px', threshold: 0 });
+    spySections.forEach(function (s) { io.observe(s); });
+  }
+
+  // Reminder form — submit to Action Network
+  var AN_URL = 'https://actionnetwork.org/api/v2/forms/8d2d6326-af60-4659-9329-fb90123ec8fc/submissions/';
+
+  var form = document.getElementById('reminderForm');
+  var success = document.getElementById('reminderSuccess');
+  if (form) {
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalBtnText = submitBtn ? submitBtn.textContent : '';
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var fullName = document.getElementById('remName').value.trim();
+      var email = document.getElementById('remEmail').value.trim();
+      var district = document.getElementById('remDistrict').value;
+      var consent = document.getElementById('remConsent').checked;
+
+      if (!fullName || !email || !consent) return;
+
+      var parts = fullName.split(/\s+/);
+      var givenName = parts.shift() || '';
+      var familyName = parts.join(' ');
+
+      var body = {
+        person: {
+          given_name: givenName,
+          family_name: familyName,
+          email_addresses: [{ address: email }],
+          postal_addresses: district ? [{ locality: district, country: 'CZ' }] : undefined,
+          custom_fields: {
+            mestska_cast: district,
+          },
+        },
+        add_tags: ['volbyvbrne_pripomenuti_2026'],
+      };
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Odesílám…';
+      }
+
+      fetch(AN_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      }).then(function (resp) {
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        form.style.display = 'none';
+        success.style.display = 'block';
+      }).catch(function (err) {
+        console.error('Reminder form submit error:', err);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+        alert('Něco se nepovedlo, zkuste to prosím znovu nebo napište na brno@zeleni.cz.');
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
