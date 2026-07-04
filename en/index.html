@@ -390,7 +390,7 @@
       <input type="checkbox" id="remConsent" name="consent" required>
       <span>I agree to the processing of my personal data by the Green Party for the purpose of sending information about the elections.</span>
     </label>
-    <button type="submit">Sign up</button>
+    <button type="submit">Save my details for a reminder</button>
   </form>
 
   <div id="reminderSuccess" hidden>
@@ -446,6 +446,13 @@
   if (form) {
     var submitBtn = form.querySelector('button[type="submit"]');
     var originalBtnText = submitBtn ? submitBtn.textContent : '';
+    var consentBox = document.getElementById('remConsent');
+
+    if (submitBtn && consentBox) {
+      var syncSubmitState = function () { submitBtn.disabled = !consentBox.checked; };
+      syncSubmitState();
+      consentBox.addEventListener('change', syncSubmitState);
+    }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -461,15 +468,17 @@
       var givenName = parts.shift() || '';
       var familyName = parts.join(' ');
 
+      var utmSource = new URLSearchParams(window.location.search).get('utm_source');
+      var customFields = { mestska_cast: district };
+      if (utmSource) customFields.utm_source = utmSource;
+
       var body = {
         person: {
           given_name: givenName,
           family_name: familyName,
           email_addresses: [{ address: email }],
           postal_addresses: district ? [{ locality: district, country: 'CZ' }] : undefined,
-          custom_fields: {
-            mestska_cast: district,
-          },
+          custom_fields: customFields,
         },
         add_tags: ['volbyvbrne_pripomenuti_2026', 'lang_en'],
       };
@@ -490,7 +499,7 @@
       }).catch(function (err) {
         console.error('Reminder form submit error:', err);
         if (submitBtn) {
-          submitBtn.disabled = false;
+          syncSubmitState();
           submitBtn.textContent = originalBtnText;
         }
         alert('Something went wrong, please try again or write to natalie@zeleni.cz.');
