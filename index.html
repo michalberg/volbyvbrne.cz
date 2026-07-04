@@ -58,9 +58,10 @@
   .site-header img { height: 28px; display: block; }
   .lang-switch { display: flex; gap: 4px; font-family: var(--font-body); font-size: 13px; font-weight: 700; }
   .lang-switch a, .lang-switch span {
-    padding: 5px 10px; border-radius: 5px; text-decoration: none; color: var(--muted);
+    padding: 5px 10px; border-radius: 5px; color: var(--muted);
   }
-  .lang-switch span { color: #000; background: #eef4f0; }
+  .lang-switch a { text-decoration: underline; }
+  .lang-switch span { color: #000; background: #eef4f0; text-decoration: none; }
   .lang-switch a:hover { color: #000; background: #f2f2f0; }
 
   .page {
@@ -164,8 +165,8 @@
 <header class="site-header">
   <img src="assets/logo-zeleni-brno.png" alt="Zelení Brno 2026">
   <nav class="lang-switch" aria-label="Jazyk / Language">
-    <span aria-current="true">CS</span>
-    <a href="/en/">EN</a>
+    <span aria-current="true">Česky</span>
+    <a href="/en/">English</a>
   </nav>
 </header>
 
